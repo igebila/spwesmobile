@@ -1,16 +1,36 @@
 // src/components/SplashScreen.tsx
 import React from 'react';
-import SPWESVideo from '../assets/SPWES.mp4'; // Import the video
+import styled from 'styled-components';
+import SPWESVideo from '../assets/SPWES.mp4';
 
-const SplashScreen = () => {
+export const SplashScreen = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Optional background color */
+  z-index: 9999; /* Ensure splash screen is on top */
+
+  & > img,
+  & > video {
+    width: 100%; /* Adjust size based on your requirement */
+    height: auto;
+  }
+`;
+
+const SplashScreenComponent = () => {
   return (
-    <div className="splash-screen">
+    <SplashScreen>
       <video autoPlay muted loop>
-        <source src={SPWESVideo} type="video/mp4" /> {/* Use the imported video */}
+        <source src={SPWESVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-    </div>
+    </SplashScreen>
   );
 };
 
-export default SplashScreen;
+export default SplashScreenComponent;

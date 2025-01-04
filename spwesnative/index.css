@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* src/App.css or src/index.css */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Optional background color */
+  z-index: 9999; /* Ensure splash screen is on top */
+}
+
+.splash-screen img, .splash-screen video {
+  width: 100%; /* Adjust size based on your requirement */
+  height: auto;
+}
+
+  
+  
